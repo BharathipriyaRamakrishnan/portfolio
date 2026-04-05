@@ -185,15 +185,26 @@ export default function Contact() {
                 
                 <AnimatePresence>
                   {sent && (
-                    <motion.div
-                      className="contact__arrow-icon"
-                      initial={{ opacity: 1, x: 0, y: 0 }}
-                      animate={{ opacity: 0, x: 80, y: -30 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
-                    >
-                      <FiSend size={18} />
-                    </motion.div>
+                    <>
+                      <motion.div
+                        className="contact__arrow-icon"
+                        initial={{ opacity: 1, x: 0, y: 0 }}
+                        animate={{ opacity: 0, x: 80, y: -30 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.8, ease: "easeInOut" }}
+                      >
+                        <FiSend size={18} />
+                      </motion.div>
+                      <motion.div
+                        className="contact__success-message"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        Thanks! Will get back to you within 24hrs.
+                      </motion.div>
+                    </>
                   )}
                 </AnimatePresence>
               </div>
@@ -202,19 +213,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {sent && (
-          <motion.div
-            className="contact__toast"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 100 }}
-            transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          >
-            ✓ Thanks! I'll get back to you within 24 hours.
-          </motion.div>
-        )}
-      </AnimatePresence>
+
     </section>
   );
 }

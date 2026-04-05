@@ -234,6 +234,18 @@
   z-index: 10;
 }
 
+.contact__success-message {
+  position: absolute;
+  top: 94%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
 @keyframes pulse-scale {
   0%, 100% { transform: translate(-50%, -50%) scale(1); }
   50% { transform: translate(-50%, -50%) scale(1.1); }
