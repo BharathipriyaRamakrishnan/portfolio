@@ -1,0 +1,118 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.2rem 0;
+  transition: all 0.35s ease;
+}
+
+.navbar--scrolled {
+  background: rgba(5, 10, 20, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--clr-border);
+  padding: 0.8rem 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbar__logo-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--clr-secondary);
+  border-radius: 50%;
+  margin-bottom: 14px;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navbar__link {
+  padding: 0.45rem 0.9rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+  color: var(--clr-text);
+  background: rgba(234, 154, 151, 0.1);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar__cv-btn {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--clr-text);
+  cursor: pointer;
+  padding: 0.25rem;
+  line-height: 1;
+}
+
+.navbar__mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--clr-border);
+  overflow: hidden;
+}
+
+.navbar__mobile-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  padding: 0.6rem 0.5rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.navbar__mobile-link:hover { color: var(--clr-text); background: rgba(234, 154, 151, 0.08); }
+
+@media (max-width: 768px) {
+  .navbar__links, .navbar__cv-btn { display: none; }
+  .navbar__hamburger { display: block; }
+  .navbar__mobile-menu { display: flex; }
+}

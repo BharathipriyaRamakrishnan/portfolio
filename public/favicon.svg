@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .letter { fill: #ffffff; font-family: 'Space Grotesk', sans-serif; font-size: 70px; font-weight: 700; }
+    </style>
+  </defs>
+  <rect class="bg" width="100" height="100" rx="10"/>
+  <text class="letter" x="50" y="75" text-anchor="middle">B</text>
+</svg>
