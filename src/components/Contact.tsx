@@ -119,7 +119,7 @@ export default function Contact() {
                     name="name"
                     value={state.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Priya"
                     className="contact__input"
                     required
                   />
@@ -132,7 +132,7 @@ export default function Contact() {
                     name="email"
                     value={state.email}
                     onChange={handleChange}
-                    placeholder="john@email.com"
+                    placeholder="priya@gmail.com"
                     className="contact__input"
                     required
                   />
@@ -167,20 +167,36 @@ export default function Contact() {
                 />
               </div>
 
-              <button
-                type="submit"
-                id="send-message-btn"
-                className={`btn btn-primary contact__submit ${sent ? 'sent' : ''}`}
-                disabled={loading}
-              >
-                {sent ? (
-                  <>✓ Message Sent!</>
-                ) : loading ? (
-                  <>Sending...</>
-                ) : (
-                  <><FiSend size={15} /> Send Message</>
-                )}
-              </button>
+              <div className="contact__submit-wrapper">
+                <button
+                  type="submit"
+                  id="send-message-btn"
+                  className={`btn btn-primary contact__submit ${sent ? 'sent' : ''}`}
+                  disabled={loading}
+                >
+                  {sent ? (
+                    <>✓ Message Sent!</>
+                  ) : loading ? (
+                    <>Sending...</>
+                  ) : (
+                    <><FiSend size={15} /> Send Message</>
+                  )}
+                </button>
+                
+                <AnimatePresence>
+                  {sent && (
+                    <motion.div
+                      className="contact__arrow-icon"
+                      initial={{ opacity: 1, x: 0, y: 0 }}
+                      animate={{ opacity: 0, x: 80, y: -30 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                    >
+                      <FiSend size={18} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </form>
           </ScrollReveal>
         </div>

@@ -17,7 +17,7 @@ export default function About() {
         <div className="about__grid">
           <ScrollReveal direction="left" className="about__image-col">
             <div className="about__image-wrap">
-              <img src="/profile.png" alt={personalInfo.name} className="about__image" />
+              <img src="/profile.jpeg" alt={personalInfo.name} className="about__image" />
               <div className="about__image-card">
                 <FiAward className="about__image-card-icon" />
                 <div>

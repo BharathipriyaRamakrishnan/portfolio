@@ -41,7 +41,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p className="footer__copy">
-            © {year} {personalInfo.name}. Made with <FiHeart className="footer__heart" /> using React & TypeScript.
+            © {year} {personalInfo.name}. Made with <FiHeart className="footer__heart" />.
           </p>
         </div>
       </div>

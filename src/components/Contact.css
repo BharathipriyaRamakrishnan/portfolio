@@ -187,10 +187,56 @@
 .contact__submit {
   align-self: center;
   transition: var(--transition);
+  position: relative;
 }
+
+.contact__submit-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+}
+
 .contact__submit.sent {
-  background: linear-gradient(135deg, #10b981, #059669);
-  box-shadow: 0 4px 16px rgba(16,185,129,0.3);
+  opacity: 0.3;
+  pointer-events: none;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  animation: fade-out-button 0.6s ease-out forwards;
+}
+
+@keyframes fade-out-button {
+  0% {
+    opacity: 1;
+    background: var(--clr-primary);
+    border-color: var(--clr-primary);
+  }
+  100% {
+    opacity: 0;
+    background: transparent;
+    border-color: transparent;
+    transform: scale(0.95);
+  }
+}
+
+.contact__arrow-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-primary);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes pulse-scale {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
 }
 
 .contact__toast {
@@ -199,7 +245,7 @@
   right: 2rem;
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
-  border-left: 4px solid #10b981;
+  border-left: 4px solid var(--clr-primary-light);
   border-radius: var(--radius-md);
   padding: 1rem 1.5rem;
   font-size: 0.95rem;
@@ -211,7 +257,44 @@
 
 @media (max-width: 900px) {
   .contact__grid { grid-template-columns: 1fr; }
+  .contact__grid { gap: 2rem; }
 }
+
+@media (max-width: 640px) {
+  .contact__info-card {
+    padding: 1.75rem 1.25rem;
+    gap: 1.5rem;
+  }
+  .contact__form-wrap {
+    padding: 1.75rem 1.25rem;
+  }
+  .contact__info-heading { font-size: 1.2rem; }
+  .contact__field-row { grid-template-columns: 1fr; gap: 0.75rem; }
+  .contact__textarea { min-height: 100px; }
+}
+
 @media (max-width: 520px) {
   .contact__field-row { grid-template-columns: 1fr; }
+  .contact__info-card {
+    padding: 1.5rem 1rem;
+  }
+  .contact__form-wrap {
+    padding: 1.5rem 1rem;
+  }
+  .contact__info-heading { font-size: 1.1rem; }
+  .contact__info-text { font-size: 0.9rem; }
+  .contact__input {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  .contact__submit { width: 100%; }
+  .contact__submit-wrapper { width: 100%; }
+  .contact__cv-btn { width: 100%; }
+  .contact__toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    font-size: 0.9rem;
+    padding: 0.85rem 1.2rem;
+  }
 }

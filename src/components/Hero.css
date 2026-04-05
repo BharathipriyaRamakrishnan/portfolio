@@ -281,7 +281,42 @@
   .hero__badge { display: none; }
 }
 
+@media (max-width: 600px) {
+  .hero__stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .hero__stat {
+    flex: 0 1 calc(50% - 0.5rem);
+    min-width: auto;
+    padding: 0.75rem 1rem;
+  }
+  .hero__stat-num { font-size: 1.25rem; }
+  .hero__stat-label { font-size: 0.65rem; }
+}
+
 @media (max-width: 480px) {
-  .hero__avatar-wrap { width: 220px; height: 220px; }
+  .hero { padding-top: 3rem; }
+  .hero__content { padding: 2rem 1rem; gap: 2rem; }
+  .hero__avatar-wrap { width: 220px; height: 220px; margin: 1rem; }
   .hero__avatar { width: 190px; height: 190px; }
+  .hero__name { font-size: clamp(2rem, 4vw, 3.5rem); }
+  .hero__role { font-size: clamp(1rem, 2vw, 1.4rem); }
+  .hero__tagline { font-size: 0.95rem; max-width: 100%; }
+  .hero__actions { flex-direction: column; width: 100%; }
+  .hero__cta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .hero__socials { gap: 0.6rem; }
+  .hero__stat {
+    flex: 0 1 calc(50% - 0.5rem);
+    padding: 0.65rem 0.8rem;
+  }
+  .hero__stat-num { font-size: 1.1rem; }
+  .hero__scroll-hint { bottom: 1rem; }
 }

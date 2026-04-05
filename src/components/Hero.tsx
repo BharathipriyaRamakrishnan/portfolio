@@ -101,7 +101,7 @@ export default function Hero() {
             <div className="hero__avatar-ring hero__avatar-ring--2" />
             <div className="hero__avatar-ring hero__avatar-ring--3" />
             <div className="hero__avatar">
-              <img src="/profile.png" alt={personalInfo.name} />
+              <img src="/profile.jpeg" alt={personalInfo.name} />
             </div>
             <div className="hero__avatar-glow" />
           </div>
